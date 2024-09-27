@@ -1,9 +1,10 @@
 Name: YOUR NAME HERE
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date    |    Time     |                                                                                                                                                                                                                                                                                                                                                      Update |
+|:--------|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Sept 23 | 12:40-1:40  | I thought about how to approach this problem more deeply, my current leading theory is to use binary search. It makes sense considering the one dimensional array, however I am currently thinking about how I will be able to differentiate the order in which the words appear in the text. I'll worry about that later as I write my binary search code. |
+| Sept 25 | 10:50-11:30 |                                                                                                                                                                                                                                                           I spent this time continuing to write my binary search code before presenting my passion project. |
+| Sept 26 |  3:30-4:30  |                                                 I have a theory on how to solve the order problem. I was thinking I could maybe create a boolean variable that checks whether the current branch of the binary tree is more or less than it's parent. If it is, then it would become true, and then we would know to put that word before the previous one. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

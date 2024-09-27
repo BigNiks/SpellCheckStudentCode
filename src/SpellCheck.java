@@ -17,8 +17,35 @@ public class SpellCheck {
      * @param dictionary The list of all accepted words.
      * @return String[] of all mispelled words in the order they appear in text. No duplicates.
      */
+    private static int dictionary;
+    private static String text[];
     public String[] checkWords(String[] text, String[] dictionary) {
-
+        this.text = text;
         return null;
+    }
+
+    public boolean binarySearch(String word, String[] DICTIONARY) {
+        int low = 0;
+        int high = DICTIONARY.length;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (word.equals(DICTIONARY[mid])) {
+                return true;
+            } else if (word.compareTo(DICTIONARY[mid]) < 0) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return false;
+    }
+
+    public void checkWords() {
+        for(int i = 0; i < text.length; i++){
+            if(!binarySearch(text.[i])){
+
+                i--;
+            }
+        }
     }
 }
