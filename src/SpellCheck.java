@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 /**
  * Spell Check
  * A puzzle written by Zach Blick
  * for Adventures in Algorithms
  * At Menlo School in Atherton, CA
  *
- * Completed by: [YOUR NAME HERE]
+ * Completed by: NIKO MADRIZ
  * */
 
 public class SpellCheck {
@@ -17,35 +19,25 @@ public class SpellCheck {
      * @param dictionary The list of all accepted words.
      * @return String[] of all mispelled words in the order they appear in text. No duplicates.
      */
-    private static int dictionary;
-    private static String text[];
     public String[] checkWords(String[] text, String[] dictionary) {
-        this.text = text;
-        return null;
-    }
-
-    public boolean binarySearch(String word, String[] DICTIONARY) {
-        int low = 0;
-        int high = DICTIONARY.length;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (word.equals(DICTIONARY[mid])) {
-                return true;
-            } else if (word.compareTo(DICTIONARY[mid]) < 0) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
+        TrieNode[] childs = new TrieNode[253];
+        boolean words = false;
+        TrieNode root = new TrieNode(childs, words);
+        Trie dict = new Trie(root);
+        Trie misspelled = new Trie(root);
+        ArrayList<String> misspell = new ArrayList<>();
+        int i = 0;
+        for (String word : dictionary) {
+            dict.insert(word);
+        }
+        for (String word : text) {
+            if (!dict.lookup(word) && !misspelled.lookup(word)) {
+                misspelled.insert(word);
+                misspell.add(word);
+                i++;
             }
         }
-        return false;
-    }
-
-    public void checkWords() {
-        for(int i = 0; i < text.length; i++){
-            if(!binarySearch(text.[i])){
-
-                i--;
-            }
-        }
+        String[] miss = misspell.toArray(new String[0]);
+        return miss;
     }
 }
